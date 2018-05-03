@@ -1,3 +1,30 @@
+<?php
+$mail = isset($_POST['mail'])?
+$_POST['mail']:""; 
+$name = isset($_POST['name'])?
+$_POST['name']:"";
+$prenom = isset($_POST['prenom'])?
+$_POST['prenom']:"";
+$anniv= isset($_POST['anniv'])?
+$_POST['anniv']:"";
+$statut = isset($_POST['statut'])?
+$_POST['statut']:""; 
+$etude = isset($_POST['etude'])?
+$_POST['etude']:""; 
+$sitepro = isset($_POST['site'])?
+$_POST['site']:""; 
+$CV = isset($_POST['CV'])?
+$_POST['CV']:""; 
+$cartepro = isset($_POST['cartepro'])?
+$_POST['cartepro']:""; 
+$ajout = isset($_POST['ajout'])?
+$_POST['ajout']:""; 
+$adphoto = isset($_POST['adphoto'])?
+$_POST['adphoto']:""; 
+$comment = isset($_POST['comment'])?
+$_POST['comment']:""; 
+$error = ""; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,30 +60,20 @@
   </div>
 </nav>
 <div class="container-fluid text-center">  
-	<h1>Vous</h1>
+  <h1>Vous</h1>
   <div>Décrivez votre profil : </div>
 </div>
-<form method="post" action="http://localhost:8888/www/Projet%20Piscine/Vousaff.php">
 <div class="container-fluid">
   <div class="row">
   <div class="col-sm-6"> 
 <p>
-      E-mail <input type="text" name="mail" /><br><br>
-      Nom <input type="text" name="name"/> <br><br> 
-      Prenom <input type="text" name="prenom"/> <br><br>
-      Date de naissance <input type = "text" name="anniv"><br><br>
-      Statut <select name="statut"><option value = "Aucune information">Sélectionner votre statut</option>
-           <option value="Etudiant">Etudiant</option>
-           <option value="Enseignant">Enseignant</option>
-           <option value="Entreprise">Entreprise</option>
-           </select><br><br>
-      Niveau d'étude <select name="etude"><option value = "Aucune information">Sélectionner votre niveau d'étude</option>
-           <option value="Baccalauréat">Baccalauréat</option>
-           <option value="Licence">Licence</option>
-           <option value="Master">Master</option>
-           <option value="Doctorat">Doctorat</option>
-           </select><br><br>
-
+      <?php echo "E-mail : $mail"; ?><br><br>
+      <?php echo "Nom : $name";?><br><br>
+      <?php echo "Prenom : $prenom";?> <br><br>
+      <?php echo "Date : $date";?> <br><br>
+      <?php echo "Statut : $statut";?> <br><br>
+      <?php echo "Niveau d'étude : $etude";?> <br><br>
+</p>
            <div class="col-md-4">
       <div class="thumbnail">
         <a href="Plage.jpg" target="_blank">
@@ -77,33 +94,33 @@
         </a>
       </div>
     </div>
-
+ <?php if ($ajout=="oui"){?>
+<div class="col-md-4">
+    <div class="thumbnail">
+        <a href= <?php echo "$adphoto"?> target="_blank">
+          <img src= <?php echo "$adphoto"?> alt="Lights" style="width:100%">
+          <div class="caption">
+            <p> <?php echo "$comment";?></p>
+          </div>
+        </a>
+      </div>
+    </div>
+<?php } ?>
     </p>
   </div>
 
-<div class="col-sm-6">
-<p>
-      CV <input type="file" name="CV"/> <br><br>
-      Lien vers site progessionnel <input type="text" name="site" /><br><br>
-      Carte professionnel <input type="file" name="cartepro"/> <br><br>
+<div class="col-sm-6"> 
 
-    </p>
-  </div>
-<div class="col-sm-6">
-<p>
-  <br><br>
-  Ajouter une photo <br>
-  <input type="radio" name="ajout" value="oui" checked> Oui
-    <input type="radio" name="ajout" value="non" checked> Non<br><br>
+     <a href= <?php echo "$CV"?> target="_blank">CV</a><br><br>
+      <a href= <?php echo "$sitepro"?>>Lien vers site professionnel </a><br><br>
+      <a href= <?php echo "$cartepro"?> target="_blank"> Carte professionnelle</a><br><br>
 
-Choisissez votre photo <input type="file" name="adphoto"/><br><br>
-Ajoutez un commentaire <input type="text" name="comment"/><br><br>
     </p>
   </div>
   </div>
   <div class="container-fluid text-center">  
-<input type = "Submit" name = "Validprof" value = "Valider"><br>
-</div>
-
+  <form method="post" action="http://localhost:8888/www/Projet%20Piscine/monprofil.html">
+<input type = "Submit" name = "modif" value = "Modifier"><br>
 </form>
+</div>
 </body>
