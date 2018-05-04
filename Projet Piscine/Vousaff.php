@@ -1,5 +1,6 @@
 <?php
-$mail = isset($_POST['mail'])?
+session_start();
+/*$mail = isset($_POST['mail'])?
 $_POST['mail']:""; 
 $name = isset($_POST['name'])?
 $_POST['name']:"";
@@ -23,7 +24,7 @@ $adphoto = isset($_POST['adphoto'])?
 $_POST['adphoto']:""; 
 $comment = isset($_POST['comment'])?
 $_POST['comment']:""; 
-$error = ""; 
+$error = ""; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,12 +68,12 @@ $error = "";
   <div class="row">
   <div class="col-sm-6"> 
 <p>
-      <?php echo "E-mail : $mail"; ?><br><br>
-      <?php echo "Nom : $name";?><br><br>
-      <?php echo "Prenom : $prenom";?> <br><br>
-      <?php echo "Date : $date";?> <br><br>
-      <?php echo "Statut : $statut";?> <br><br>
-      <?php echo "Niveau d'étude : $etude";?> <br><br>
+      E-mail : <?php echo $_SESSION['mail']; ?><br><br>
+      Nom : <?php echo $_SESSION['nom'];?><br><br>
+      Prenom : <?php echo $_SESSION['prenom'];?> <br><br>-->
+      Date de naissance : <?php echo $_SESSION['date'];?> <br><br>
+      Statut : <?php echo $_SESSION['statut'];?> <br><br>
+      Niveau d'étude : <?php echo $_SESSION['etude'];?> <br><br>
 </p>
            <div class="col-md-4">
       <div class="thumbnail">
@@ -94,28 +95,28 @@ $error = "";
         </a>
       </div>
     </div>
- <?php if ($ajout=="oui"){?>
+ <!--<?php// if ($ajout=="oui"){?>
 <div class="col-md-4">
     <div class="thumbnail">
-        <a href= <?php echo "$adphoto"?> target="_blank">
-          <img src= <?php echo "$adphoto"?> alt="Lights" style="width:100%">
+        <a href= <?php //echo "$adphoto"?> target="_blank">
+          <img src= <?php //echo "$adphoto"?> alt="Lights" style="width:100%">
           <div class="caption">
-            <p> <?php echo "$comment";?></p>
+            <p> <?php //echo "$comment";?></p>
           </div>
         </a>
       </div>
     </div>
-<?php } ?>
+<?php } ?>-->
     </p>
   </div>
 
 <div class="col-sm-6"> 
 
-     <a href= <?php echo "$CV"?> target="_blank">CV</a><br><br>
-      <a href= <?php echo "$sitepro"?>>Lien vers site professionnel </a><br><br>
-      <a href= <?php echo "$cartepro"?> target="_blank"> Carte professionnelle</a><br><br>
+    <!-- <a href= <?php //echo "$CV"?> target="_blank">CV</a><br><br>
+      <a href= <?php //echo "$sitepro"?>>Lien vers site professionnel </a><br><br>
+      <a href= <?php //echo "$cartepro"?> target="_blank"> Carte professionnelle</a><br><br>-->
 
-    </p>
+    
   </div>
   </div>
   <div class="container-fluid text-center">  
