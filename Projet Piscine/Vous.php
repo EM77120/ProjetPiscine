@@ -35,7 +35,7 @@ session_start();
       </ul>
     </div>
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="Deconnexion.php"> Se deconnecter</a></li>
+        <li><a href="Deconnexion.php"> Se deconnecter</a></li></ul>
   </div>
 </nav>
 <div class="container-fluid text-center">  
@@ -54,23 +54,13 @@ session_start();
       Date de naissance : <?php echo $_SESSION['date']?><br><br>
       Statut : <?php echo $_SESSION['statut']?><br><br>
       Niveau d'étude : <?php echo $_SESSION['etude']?><br><br>
-
+</p>
            <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="Plage.jpg" target="_blank">
-          <img src="Plage.jpg" alt="Lights" style="width:100%">
-          <div class="caption">
-            <p>Jolie plage</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  <div class="col-md-4">
     <div class="thumbnail">
-        <a href="Maisons.jpg" target="_blank">
-          <img src="Maisons.jpg" alt="Lights" style="width:100%">
+        <a href= <?php echo $_SESSION['photo']?> target="_blank">
+          <img src= <?php echo $_SESSION['photo']?> alt="Lights" style="width:100%">
           <div class="caption">
-            <p>Jolies Maisons</p>
+            <p> <?php echo $_SESSION['comment'];?></p>
           </div>
         </a>
       </div>
@@ -81,27 +71,20 @@ session_start();
 
 <div class="col-sm-6">
 <p>
-      CV <input type="file" name="CV"/> <br><br>
-      Lien vers site progessionnel <input type="text" name="site" /><br><br>
-      Carte professionnel <input type="file" name="cartepro"/> <br><br>
+      <a href= <?php echo $_SESSION['CV']?>>CV</a><br><br>
+      <a href= <?php echo $_SESSION['site']?>>Lien vers site professionnel </a><br><br>
+      <a href= <?php echo $_SESSION['cartepro']?>>Carte professionnelle </a><br><br>
 
     </p>
   </div>
-<div class="col-sm-6">
-<p>
-  <br><br>
-  Ajouter une photo <br>
-  <input type="radio" name="ajout" value="oui" checked> Oui
-    <input type="radio" name="ajout" value="non" checked> Non<br><br>
-
-Choisissez votre photo <input type="file" name="adphoto"/><br><br>
-Ajoutez un commentaire <input type="text" name="comment"/><br><br>
-    </p>
   </div>
-  </div>
+</form>
+</div>
+</form>
   <div class="container-fluid text-center">  
-<input type = "Submit" name = "Validprof" value = "Valider"><br>
+<form method="post" action="http://localhost:8888/www/Projet%20Piscine/monprofil.php">
+<input type = "Submit" name = "modif" value = "Modifier"><br>
+</form>
 </div>
 
-</form>
 </body>
