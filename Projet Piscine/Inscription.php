@@ -49,17 +49,8 @@ $_SESSION['nom'] = $nom;
 $_SESSION['prenom'] = $prenom;
   
 
-  $conn->close();
-  
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-
-} else { echo "Erreur : $error";}
-?>
-<!DOCTYPE html>
+  $conn->close();?>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Accueil</title>
@@ -101,3 +92,12 @@ $conn->close();
 </div>
 
 </body>
+  
+<?php } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+} else { echo "Erreur : $error";}
+?>

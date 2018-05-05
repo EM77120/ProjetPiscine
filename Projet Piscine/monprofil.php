@@ -64,46 +64,23 @@ session_start();
            <option value="Doctorat">Doctorat</option>
            </select><br><br>
 
-           <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="Plage.jpg" target="_blank">
-          <img src="Plage.jpg" alt="Lights" style="width:100%">
-          <div class="caption">
-            <p>Jolie plage</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <a href="Maisons.jpg" target="_blank">
-          <img src="Maisons.jpg" alt="Lights" style="width:100%">
-          <div class="caption">
-            <p>Jolies Maisons</p>
-          </div>
-        </a>
-      </div>
-    </div>
-
     </p>
   </div>
 
 <div class="col-sm-6">
 <p>
-      CV <input type="file" name="CV"/> <br><br>
+      CV <input type="text" name="CV"/> <br><br>
       Lien vers site progessionnel <input type="text" name="site" /><br><br>
-      Carte professionnel <input type="file" name="cartepro"/> <br><br>
+      Carte professionnel <input type="text" name="cartepro"/> <br><br>
 
     </p>
   </div>
-<div class="col-sm-6">
+
+  <div class="col-sm-6">
 <p>
   <br><br>
-  Ajouter une photo <br>
-  <input type="radio" name="ajout" value="oui" checked> Oui
-    <input type="radio" name="ajout" value="non" checked> Non<br><br>
 
-Choisissez votre photo <input type="file" name="adphoto"/><br><br>
+Choisissez votre photo <input type="text" name="adphoto"/><br><br>
 Ajoutez un commentaire <input type="text" name="comment"/><br><br>
     </p>
   </div>
