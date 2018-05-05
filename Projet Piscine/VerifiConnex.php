@@ -7,8 +7,8 @@ include("ConnexionBDD2.php");
 
 $nb = 0;
 //Récupération de l'utilisateur et de son pass hashé
-$req = $conn->prepare('SELECT * FROM utilisateur WHERE mail = :email AND mdp = :pass');
-$req -> execute(array('email' => $mail, 'pass' => $mdp));
+$req = $conn->prepare('SELECT * FROM utilisateur WHERE mail = ? AND mdp = ?');
+$req -> execute(array($_POST['mail'], $_POST['mdp']));
 
     while($resultat = $req->fetch())
     {

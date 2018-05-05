@@ -27,7 +27,7 @@ session_start();
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Accueil</a></li>
         <li><a href="#">Mon réseau</a></li>
-        <li ><a href="#">Vous</a></li>
+        <li ><a href="VousData.php">Vous</a></li>
         <li><a href="#">Notifications</a></li>
         <li><a href="#">Ma messagerie</a></li>
         <li><a href="#">Emplois</a></li>
