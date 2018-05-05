@@ -1,7 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Connexion</title>
+  <title>Vous</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,22 +25,22 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Accueil</a></li>
+        <li class="active"><a href="#">Accueil</a></li>
+        <li><a href="#">Mon réseau</a></li>
+        <li ><a href="#">Vous</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Ma messagerie</a></li>
+        <li><a href="#">Emplois</a></li>
       </ul>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="Deconnexion.php"> Se deconnecter</a></li>
   </div>
 </nav>
 <div class="container-fluid text-center">  
-	<h1>My Professional Network</h1>
-      <h2>Connexion</h2> <br>
+  <h1>Accueil</h1><br>
 <p>
-      Adresse mail <input type="text" name="mail" /><br><br>
-      Mot de passe <input type="text" name="mdp" /><br><br>
-
-
-      <form method="post" action="http://localhost:8888/www/Projet%20Piscine/VerifiConnex.php">
-      <input type = "Submit" name = "Submit1" value = "Me connecter"><br>
-    </form>
+  Bonjour <?php echo $_SESSION['prenom']?> ! <br><br>
     </p>
 </div>
 
